@@ -1,8 +1,11 @@
-all:
-	g++ main.cpp -E
-	g++ main.cpp -c
-	g++ main.cpp -S
-	g++ main.cpp -o output
-	g++ main.cpp
-	./a.out
-compile:
+all:main
+
+main:main.o complex.o
+	g++ main.o complex.o -o main
+main.o:main.cpp
+	g++ main.cpp -c -o main.o
+complex.o:complex.cpp
+	g++ complex.cpp -c -o complex.o
+clean:
+	rm *.o main
+

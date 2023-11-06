@@ -133,8 +133,20 @@ int main(int argc, char** argv)
             //std::cout << "hole dist " << hole_dist << std::endl; 
         }
     }
-          
-    
+
+    //Close file descriptor   
+    int close_result = close(fd);
+    if (close_result < 0)
+    {
+        std::cerr << strerror(errno)<<std::endl;
+    }
+
+    //Close file descriptor
+    close_result = close(fd_2);
+    if (close_result < 0)
+    {
+        std::cerr << strerror(errno)<<std::endl;
+    }
     
 
     std::cout << "data length = " << data_length << " hole length = "<< hole_length << std::endl;

@@ -122,8 +122,9 @@ int main()
                         exit(errno);
                     }   
 
+                    //Change input to start not from silent
                     input = input + 1;
-                    std::cout << input[0] << std::endl;             
+                    //std::cout << input[0] << std::endl;             
                 }
 
 
